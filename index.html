@@ -65,6 +65,24 @@
             margin-top: 100vh; /* Add a large top margin to push the text down */
             margin-bottom: 20vh; /* Add a smaller bottom margin */
         }
+        img {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px 0;
+            padding-top: 20px;
+            object-fit: cover;
+            object-position: top;
+        }
+        /* Media query for mobile devices */
+        @media (max-width: 768px) {
+            .scroll-section {
+                margin-bottom: 10px;
+            }
+            img {
+                margin: 0;
+                padding-top: 0px; /* Reduce the padding above images on mobile */
+            }
+        }
     </style>
 </head>
 <body>
@@ -89,8 +107,8 @@
     <section class="scroll-section">
         <h2>Ethos</h2>
     </section>
-    <img src="./bitcoin.jpeg" alt="Bitcoin Whitepaper" style="width: 100%; max-width: 1200px; height: 675px; margin: 20px 0; padding-top: 20px;">
-    <img src="./ethereum.png" alt="Ethereum Whitepaper" style="width: 100%; max-width: 1200px; height: 675px; margin: 20px 0; padding-top: 20px; object-fit: cover; object-position: top;">
+    <img id="bitcoin-image" src="./bitcoin.jpeg" alt="Bitcoin Whitepaper">
+    <img id="ethereum-image" src="./ethereum.png" alt="Ethereum Whitepaper">
     <div class="scroll-div">
         <h2>Lore</h2>
         <ul>
@@ -102,5 +120,13 @@
         </ul>
     </div>
     <p class="more-coming-soon">more coming soon.</p>
+    <script>
+        // JavaScript to set the height of the Ethereum image based on the Bitcoin image's height
+        window.addEventListener('load', function() {
+            var bitcoinImage = document.getElementById('bitcoin-image');
+            var ethereumImage = document.getElementById('ethereum-image');
+            ethereumImage.style.height = bitcoinImage.clientHeight + 'px';
+        });
+    </script>
 </body>
 </html>
