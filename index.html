@@ -21,6 +21,34 @@
         }
         h1 {
             color: #fff; /* White color for the heading */
+            font-size: 100px; /* Increase the font size */
+        }
+        .dashed-list-container {
+            margin-top: 40px; /* Add some space above the list */
+            text-align: none; /* Align text to the left within this container */
+        }
+        .dashed-list {
+            list-style-type: none; /* Remove default list styling */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+            text-align: left; /* Align text to the left */
+            display: inline-block; /* Ensure the list is not stretched */
+        }
+        .dashed-list-without-before {
+            list-style-type: none; /* Remove default list styling */
+            padding: 0; /* Remove default padding */
+            padding-left: 50px; /* Add some space to the left */
+            margin: 0; /* Remove default margin */
+            text-align: left; /* Align text to the left */
+            display: inline-block; /* Ensure the list is not stretched */
+        }
+        .dashed-list li {
+            position: relative; /* Position relative for pseudo-element */
+            padding-left: 10px; /* Space for the dash */
+        }
+        .dashed-list li::before {
+            content: "- "; /* Add a dash before each list item */
+            color: #fff; /* White color for the dash */
         }
         .scroll-section {
             margin-top: 100vh; /* Push the section down by the height of the viewport */
@@ -37,7 +65,23 @@
 </head>
 <body>
     <h1>Defi Native</h1>
-    <p>coming soon.</p>
+    <div class="dashed-list-container">
+    <h2><a href="https://github.com/cmontecoding" style="color: #fff;">creations</a></h3>
+    <ul class="dashed-list">
+        <li>stealth</li>
+        <li>stealth</li>
+        <li>stealth</li>
+        <li><a href="https://github.com/Kwenta/token/blob/main/contracts/TokenDistributor.sol" style="color: #fff; ">token distribution</a></li>
+    </ul>
+    <h2><a href="https://www.rareskills.io/" style="color: #fff;">publications</a></h3>
+    <ul class="dashed-list-without-before">
+        <li>author - <a href="https://www.rareskills.io/post/beacon-proxy" style="color: #fff;">beacon proxy</a></li>
+        <li>editor - <a href="https://www.rareskills.io/compound-v3-book" style="color: #fff;">compound v3 book</a></li>
+        <li>editor - <a href="https://www.rareskills.io/zk-book" style="color: #fff;">zk book</a></li>
+        <li>editor - uniswap v3 book (soon)</li>
+        <li>editor - curve v1 book (soon)</li>
+    </ul>
+    </div>
     <section class="scroll-section">
         <h2>Ethos</h2>
     </section>
